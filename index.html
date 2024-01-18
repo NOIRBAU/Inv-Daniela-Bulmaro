@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Daniela & Bulmaro</title>    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="./assets/anilloBodas.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Spectral:wght@300&display=swap" rel="stylesheet">    
+</head>
+
+<body>
+    <article class="principal">
+        <div class="blanco">
+            <div class="azul">
+                <section class="audioContainer">
+                    <audio id="audio" autobuffer autoplay preload="auto" controls>
+                        <source src="./assets/Carin Leon - Que Más Puedo Pedir (Video Oficial).mp3" type="audio/mp3">
+                     </audio> 
+                </section>
+                <section class="part1">
+                    <h1>Tenemos el honor de invitarte en este día tan importante de nuestras vidas.</h1>
+                    <img class="nuestraBoda" src="assets/nuestraBoda.png">
+                    <p class="cursiva">“Mi promesa es sostener tu corazón para seguir soñando juntos cada día el resto de nuestras vidas“.</p>
+                    <img class="img" src="assets/DyB.png">
+                    <img class="img" src="assets/fecha.png">
+                    <img class="separador img" src="assets/decorador.png">
+                    <h2 class="faltan">Faltan</h2>
+                    <table width="100%" style="background-color:#0C2F55" style="text-align:center;" >
+                        <tr>
+                          <td><span id="days"></span></td>
+                          <td><span id="hours"></th>
+                          <td><span id="minutes"></span></td>
+                          <td><span id="seconds"></span></td>
+                        </tr>
+                        <tr>
+                          <th>DIAS</th>
+                          <th>HRS</th>
+                          <th>MIN</th>
+                         <th>SEG</th>
+                        </tr>
+                    </table>
+                    <img class="separador img" src="assets/decorador.png">
+                    <div class="regalo">
+                        <div class="contenedor">
+                            <img class="icono3" src="assets/iglesia.png">
+                            <h3>Parroquia Nuestra Señora de Candelaria</h3>
+                            <a href="https://maps.app.goo.gl/M21GEqrQ6vgipTp17" target="_blank">
+                                <div class="button">UBICACIÓN</div>
+                            </a>
+                        </div>
+                        <div class="contenedor">
+                            <img class="icono3" src="assets/recepción.png">
+                            <h3>Quinta Chalia</h3>
+                            <a href="https://maps.app.goo.gl/XSWYG5Rz1DW7xhjo9" target="_blank">
+                                <div class="button">UBICACIÓN</div>
+                            </a>
+                        </div>
+                    </div>    
+                    <img class="img" src="assets/itinerario.png">
+                    <p>Tu presencia es nuestro mejor regalo, pero si deseas hacernos un obsequio, ponemos a tu disposición las siguientes sugerencias: </p>
+                    <div class="regalo">
+                        <div class="contenedor">
+                            <h2>Mesa de Regalos</h2>
+                            <h2>51353103</h2>
+                        </div>
+                        <div class="contenedor">
+                            <img class="icono" src="assets/wired-outline-412-gift (3).gif">
+                            <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51353103" target="_blank">
+                                <div class="button">LIVERPOOL</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="regalo">
+                        <div class="contenedor">
+                            <h2>Código de Vestimenta</h2>
+                            <img class="icono2" src="assets/vestimenta.png">
+                        </div>
+                        <div class="contenedor">
+                            <h2>Bienvenidos Niños</h2>
+                            <img class="icono3" src="assets/niños.png">
+                        </div>
+                    </div>
+                    <p>Favor de confirmar tu asistencia:</p>
+                    <a href="https://api.whatsapp.com/send?phone=+529624003226&text=%C2%A1Hola!%20Buen%20d%C3%ADa,%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Daniela%20y%20Bulmaro.%20Deseo%20recibir%20mis%20pases%20digitales,%20mi%20nombre%20completo%20es:%20" target="_blank">
+                        <div class="button">CONFIRMAR</div>
+                    </a>
+                    <img class="separador img" src="assets/decorador.png">
+                </section> 
+            </div>
+            
+        </div>
+        
+        
+    </article>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { 
+  
+          //===
+          // VARIABLES
+          //===
+          const DATE_TARGET = new Date('03/10/2024 7:00 PM');
+          // DOM for render
+          const SPAN_DAYS = document.querySelector('span#days');
+          const SPAN_HOURS = document.querySelector('span#hours');
+          const SPAN_MINUTES = document.querySelector('span#minutes');
+          const SPAN_SECONDS = document.querySelector('span#seconds');
+          // Milliseconds for the calculations
+          const MILLISECONDS_OF_A_SECOND = 1000;
+          const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
+          const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
+          const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24
+  
+          //===
+          // FUNCTIONS
+          //===
+  
+          /**
+          * Method that updates the countdown and the sample
+          */
+  function updateCountdown() {
+    // Calcs
+    const NOW = new Date()
+    const DURATION = DATE_TARGET - NOW;
+    let REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
+    let REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+    let REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+    let REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+    // Set any negative values to 0
+    REMAINING_DAYS = REMAINING_DAYS < 0 ? 0 : REMAINING_DAYS;
+    REMAINING_HOURS = REMAINING_HOURS < 0 ? 0 : REMAINING_HOURS;
+    REMAINING_MINUTES = REMAINING_MINUTES < 0 ? 0 : REMAINING_MINUTES;
+    REMAINING_SECONDS = REMAINING_SECONDS < 0 ? 0 : REMAINING_SECONDS;
+    // Render
+    SPAN_DAYS.textContent = REMAINING_DAYS;
+    SPAN_HOURS.textContent = REMAINING_HOURS;
+    SPAN_MINUTES.textContent = REMAINING_MINUTES;
+    SPAN_SECONDS.textContent = REMAINING_SECONDS;
+  }
+  
+          //===
+          // INIT
+          //===
+          updateCountdown();
+          // Refresh every second
+          setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
+      });
+      </script>
+</body>
+</html>

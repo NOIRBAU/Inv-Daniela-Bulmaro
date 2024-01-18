@@ -1,0 +1,269 @@
+:root {
+    --light-color1: #bfd2e6;
+    --color1: #D9BD8B;
+    --color1a: #53403A;
+    --color2: #F4E5D2;
+    --color3: rgb(94,85,94);
+    --dark-color: #0C2F55;
+    --black: #1c1c1c;
+    --white-color: #fbfcfc;
+}
+/*GENÉRICOS*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spectral', serif;
+    font-weight: bold;
+}
+body {
+    min-height: 100vh;
+    background-color: var(--dark-color);
+}
+p {
+    font-family: "Spectral", serif;
+    font-weight: 300;
+    font-style: normal;
+    text-align: center;
+    font-size: 25px;
+    color: var(--white-color);
+}
+a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+h1 {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    color: var(--white-color);
+    text-align: center;
+}
+h2 {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: var(--white-color);
+    text-align: center;
+    margin: 10px 0;
+}
+h3 {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: var(--white-color);
+    text-align: center;
+    margin: 10px 0;
+}
+.cursiva {
+    font-style: oblique;
+}
+.button {
+    width: 200px;
+    border-radius: 10px;
+    padding: 15px;
+    -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+    -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+    box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* INVITACIÓN */
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url(assets/floresOriginal.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 1200px;
+    padding: 20% 12%;
+    overflow: hidden;
+    background-position: center;
+}
+.blanco {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 30px;
+}
+.azul {
+    background-color: #0C2F55;
+    border: 12px solid var(--white-color);
+    padding: 20px;
+}
+.part1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nuestraBoda {
+    max-width: 100%;
+    margin: 30px auto;
+}
+.img {
+    max-width: 80%;
+    margin: 10px auto;
+}
+.separador {
+    max-width: 40%;
+    margin: 20px;
+}
+.icono {
+    width: 50px;
+    height: 50px;
+}
+.regalo {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+}
+.contenedor {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    margin: 30px 0;
+}
+.contenedor img {
+    margin: 0 auto;
+} 
+.contenedor .button {
+    margin: 10px auto;
+}
+.icono2 {
+    width: 70px;
+    height: 75px;
+}
+.icono3 {
+    width: 75px;
+    height: 65px;
+}
+
+/*AUDIO*/
+.audioContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+audio {
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 35px;
+}
+audio::-webkit-media-controls-play-button,
+     audio::-webkit-media-controls-panel {
+     background-color: var(--light-color1);
+}
+.faltan {
+    margin-bottom: 20px;
+}
+/* CONTADOR */
+td {border-style: solid;
+    border-color: #ffffff;
+ border-width: 0px;
+color: #ffffff;
+padding: 0px;
+font-size: 20px;
+ text-align: center;}
+
+th {
+ border-width: 0px;
+color: #ffffff;
+ text-align: center;
+padding: 0px;
+font-size: 16px;
+}
+
+/* BREAK POINTS */
+
+@media only screen and (max-width: 768px) {
+    .principal {
+        width: 100vw;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(assets/flores1.png);
+        padding: 10% 5%;
+    }
+    .blanco {
+        width: 90vw;
+        padding: 10px;
+        margin-top: 10px;
+    }
+    .azul {
+        padding: 5px;
+        border: 8px;
+        
+    }
+    .nuestraBoda {
+        margin: 20px 0;
+    }
+    .audioContainer {
+        max-width: 280px;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 15px;
+    }
+    p {
+        font-size: 13px;
+    }
+    .img {
+        max-width: 90%;
+    }
+    img.separador.img {
+        margin: 10px;
+    }
+    h2.faltan {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    .regalo {
+        width: 100%;
+        align-content: center;
+        margin: 0;
+    }
+    div.regalo {
+        justify-content:baseline;
+        align-items: center;
+    }
+    img.img {
+        margin: 0;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .contenedor {
+        width: 48%;
+        margin: 0 0 10px 0;
+    }
+    h3 {
+        font-size: 13px;
+    }
+    div.button {
+        width: 100px;
+        font-size: 10px;
+        padding: 7px;
+    }
+    div.regalo {
+        margin-bottom: 0px;
+    }
+    h2 {
+        font-size: 13px;
+    }
+}
