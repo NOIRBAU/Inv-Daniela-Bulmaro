@@ -199,12 +199,12 @@ font-size: 16px;
         background-repeat: no-repeat;
         background-size: cover;
         background-image: url(assets/flores3.png);
-        padding: 25% 5%;
+        padding: 20% 5%;
     }
     .blanco {
         width: 90vw;
         padding: 10px;
-        margin-top: 10px;
+        margin-top: 30px;
     }
     .azul {
         padding: 5px;
